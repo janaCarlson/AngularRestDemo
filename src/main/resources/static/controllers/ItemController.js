@@ -5,8 +5,6 @@
         //    $scope.items = response ? response : [];
         //});
 
-        $scope.message = "A checklist";
-
         $scope.addItem = function(description) {
             new ItemFactory({
                 description: description,
