@@ -1,9 +1,11 @@
 (function() {
     var ItemController = function($scope, ItemFactory) {
+        $scope.items = [];
         //ItemFactory.query(function(response) {
         //    $scope.items = response ? response : [];
         //});
-        $scope.items = [];
+
+        $scope.message = "A checklist";
 
         $scope.addItem = function(description) {
             new ItemFactory({

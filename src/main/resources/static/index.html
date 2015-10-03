@@ -2,48 +2,40 @@
 <html lang="en">
 <head>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
 </head>
 <body ng-app="myApp">
-<div class="container" ng-controller="ItemController">
-    <div class="page-header">
-        <h1>A checklist</h1>
-    </div>
-    <div class="alert alert-info" role="alert" ng-hide="items && items.length > 0">
-        There are no items yet.
-    </div>
-    <form class="form-horizontal" role="form" ng-submit="addItem(newItem)">
-        <div class="form-group" ng-repeat="item in items">
-            <div class="checkbox col-xs-9">
-                <label>
-                    <input type="checkbox" ng-model="item.checked" ng-change="updateItem(item)"/> {{item.description}}
-                </label>
+<header>
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#/"><i class="fa fa-sun-o"> Paradise</i></a>
             </div>
-            <div class="col-xs-3">
-                <button class="pull-right btn btn-danger" type="button" title="Delete"
-                        ng-click="deleteItem(item)">
-                    <span class="glyphicon glyphicon-trash"></span>
-                </button>
-            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#/"><i class="fa fa-home"></i> Home</a></li>
+                <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
+                <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
+            </ul>
         </div>
-        <hr />
-        <div class="input-group">
-            <input type="text" class="form-control" ng-model="newItem" placeholder="Enter the description..." />
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="submit" ng-disabled="!newItem" title="Add">
-                <span class="glyphicon glyphicon-plus"></span>
-            </button>
-          </span>
-        </div>
-    </form>
-</div>
+    </nav>
+</header>
+
+<div ng-view></div>
 
 <script src="sources/jquery.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 <script type="text/javascript" src="./sources/angular.min.js"></script>
 <script type="text/javascript" src="./sources/angular-resource.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular-route.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.js"></script>
+<!--App-->
 <script type="text/javascript" src="./app/app.js"></script>
+<!--Controllers-->
 <script type="text/javascript" src="./controllers/ItemController.js"></script>
+<script type="text/javascript" src="./controllers/AboutController.js"></script>
+<script type="text/javascript" src="./controllers/ContactController.js"></script>
+<!--Services-->
 <script type="text/javascript" src="./services/ItemService.js"></script>
 </body>
 </html>
