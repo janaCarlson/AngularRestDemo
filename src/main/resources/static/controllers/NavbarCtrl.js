@@ -9,6 +9,10 @@
             } else {
                 $scope.error = true;
             }
+        };
+
+        $scope.logout = function() {
+            $scope.user = {};
         }
     };
 
