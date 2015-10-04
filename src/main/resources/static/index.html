@@ -4,7 +4,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
           crossorigin="anonymous">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css"/>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css"/>
 </head>
 <body ng-app="myApp">
 <div ng-controller="NavbarCtrl">
@@ -12,20 +12,18 @@
         <nav class="navbar navbar-inverse">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#/"><i class="fa fa-sun-o"> Paradise</i></a>
+                    <a class="navbar-brand" href="#/"><i class="fa fa-ship"> Paradise</i></a>
                 </div>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li ng-show="user.name"><a href="#supplies"><i class="fa fa-home"></i> Supplies</a></li>
-                    <li ng-show="user.name"><a href="#passengers"><i class="fa fa-shield"></i> Passengers</a></li>
-                    <li ng-show="user.name"><a href="#weather"><i class="fa fa-comment"></i> Weather</a></li>
+                    <li ng-show="user.name"><a href="#supplies"><i class="fa fa-suitcase"></i> Supplies</a></li>
+                    <li ng-show="user.name"><a href="#passengers"><i class="fa fa-users"></i> Passengers</a></li>
+                    <li ng-show="user.name"><a href="#weather"><i class="fa fa-sun-o"></i> Weather</a></li>
                     <li ng-show="user.name"><a href="#/"> Welcome {{user.name}}</a>
                     <li ng-show="!user.name">
                     <p class="navbar-btn">
                         <a href="#loginModal" class="btn btn-primary" data-toggle="modal">Login</a>
                     </p>
-                        <!--<button class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Login-->
-                        <!--</button>-->
                     </li>
                 </ul>
             </div>
@@ -85,12 +83,12 @@
 <script type="text/javascript" src="./app/app.js"></script>
 <!--Controllers-->
 <script type="text/javascript" src="controllers/ItemCtrlr.js"></script>
-<script type="text/javascript" src="controllers/HomeCtrl.js"></script>
-<script type="text/javascript" src="controllers/ContactCtrl.js"></script>
+<script type="text/javascript" src="controllers/WeatherCtrl.js"></script>
 <script type="text/javascript" src="controllers/UserCtrl.js"></script>
 <script type="text/javascript" src="controllers/NavbarCtrl.js"></script>
 <!--Services-->
 <script type="text/javascript" src="./services/ItemService.js"></script>
 <script type="text/javascript" src="./services/UserService.js"></script>
+<script type="text/javascript" src="./services/WeatherService.js"></script>
 </body>
 </html>
