@@ -1,5 +1,7 @@
 (function() {
-    var ItemController = function($scope, ItemFactory) {
+    var ItemCtrl = function($scope, ItemFactory) {
+        $scope.message = "Add your supplies here";
+        $scope.header = "Supplies";
         $scope.items = [];
         //ItemFactory.query(function(response) {
         //    $scope.items = response ? response : [];
@@ -26,7 +28,7 @@
         };
     };
 
-    ItemController.$inject = ['$scope', 'ItemFactory'];
-    angular.module("myApp.controllers").controller("ItemController", ItemController);
+    ItemCtrl.$inject = ['$scope', 'ItemFactory'];
+    angular.module("myApp.controllers").controller("ItemCtrl", ItemCtrl);
 
 }());

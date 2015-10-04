@@ -1,21 +1,46 @@
 package demo.user;
 
+import javax.persistence.*;
 /**
  * Created by Jana on 10/3/2015.
  */
+@Entity
 public class User {
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Integer id;
+    @Column
+    private boolean checked;
+
+    @Column
     private String firstName;
+
+    @Column
     private String lastName;
+
+    @Column
     private String email;
+
+    @Column
     private String password;
 
     public User() {}
 
-    public User(String firstName, String lastName, String email, String password) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.password = password;
+    public boolean isChecked() {
+        return checked;
+    }
+
+    public void setChecked(boolean checked) {
+        this.checked = checked;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getFirstName() {

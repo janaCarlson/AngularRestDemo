@@ -7,20 +7,25 @@
 
             // route for the home page
             .when('/', {
-                templateUrl : '../partials/home.html',
-                controller  : 'ItemController'
+                templateUrl : '../partials/paradise.html'
             })
 
             // route for the about page
-            .when('/about', {
-                templateUrl : '../partials/about.html',
-                controller  : 'AboutController'
+            .when('/supplies', {
+                templateUrl : '../partials/item.html',
+                controller  : 'ItemCtrl'
             })
 
             // route for the contact page
-            .when('/contact', {
-                templateUrl : '../partials/contact.html',
-                controller  : 'ContactController'
+            .when('/passengers', {
+                templateUrl : '../partials/user.html',
+                controller  : 'UserCtrl'
+            })
+            .when('/weather', {
+                templateUrl: '../partials/weather.html'
+            })
+            .otherwise({
+                redirectTo: '/'
             });
     });
 }());
